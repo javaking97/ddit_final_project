@@ -1,0 +1,20 @@
+package kr.or.ddit.mapper.common;
+
+<<<<<<< .mine
+import kr.or.ddit.vo.common.UserVO;
+||||||| .r403369
+=======
+import kr.or.ddit.vo.common.UserVO;
+
+public interface ISignMapper {
+>>>>>>> .r403505
+
+<<<<<<< .mine
+public interface ISignMapper {
+	public UserVO readByUserId(String username);
+||||||| .r403369
+=======
+	public UserVO idCheck(String userId);
+
+>>>>>>> .r403505
+}

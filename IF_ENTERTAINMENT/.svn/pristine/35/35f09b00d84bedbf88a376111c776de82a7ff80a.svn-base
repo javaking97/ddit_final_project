@@ -1,0 +1,19 @@
+package kr.or.ddit.controller.goods;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 나의 구매내역 조회 컨트롤러
+ * @author 조재훈
+ */
+@Controller
+@Slf4j
+@RequestMapping("/goods")
+public class MyOrderController {
+	
+	// 나의 굿즈 구매내역을 확인한다
+
+}

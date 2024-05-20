@@ -1,0 +1,21 @@
+package kr.or.ddit.service.entertain;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import kr.or.ddit.controller.common.ServiceResult;
+import kr.or.ddit.vo.entertain.IREventVO;
+import kr.or.ddit.vo.entertain.PaginationInfoVO;
+
+public interface IIRService {
+
+	ServiceResult insertIREvent(HttpServletRequest req, IREventVO ireventVO);
+
+	int selectIREventCount(PaginationInfoVO<IREventVO> pagingVO);
+
+	List<IREventVO> selectIREventList(PaginationInfoVO<IREventVO> pagingVO);
+
+	IREventVO selectIREvent(int bfNo);
+
+}

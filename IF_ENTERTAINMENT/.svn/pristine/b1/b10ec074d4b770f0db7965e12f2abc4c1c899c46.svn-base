@@ -1,0 +1,16 @@
+package kr.or.ddit.mapper.entertain;
+
+import java.util.List;
+
+import kr.or.ddit.vo.common.PaginationInfoVO;
+import kr.or.ddit.vo.entertain.IREventVO;
+
+public interface IIRMapper {
+
+	int insertIREvent(IREventVO ireventVO);
+
+	int selectIREventCount(PaginationInfoVO<IREventVO> pagingVO);
+
+	List<IREventVO> selectIREventList(PaginationInfoVO<IREventVO> pagingVO);
+
+}

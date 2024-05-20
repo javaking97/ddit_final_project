@@ -1,0 +1,19 @@
+package kr.or.ddit.controller.goods;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 굿즈샵 공지사항 등록 컨트롤러
+ * @author 성이수
+ */
+@Controller
+@Slf4j
+@RequestMapping("/goods/notice")
+public class GoodsNoticeInsertController {
+
+	// 굿즈샵 관련 공지 등록 시 팝업 띄울지 여부 체크박스 넣기!
+	
+}

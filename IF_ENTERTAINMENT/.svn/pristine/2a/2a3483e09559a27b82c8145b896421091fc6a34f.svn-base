@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.common.IAdminMapper">
+
+<!-- 금일 가입자 수를 조회한다. -->
+<select id="selectTodayRegister" resultType="int">
+	select 
+		count(member_regdate)
+	from 
+		member
+	where
+		trunc(member_regdate) = trunc(current_date)
+</select>
+
+<!-- 금일 가입자 수를 조회한다. -->
+<select id="selectYesterdayRegister" resultType="int">
+	select 
+		count(member_regdate)
+	from 
+		member
+	where
+		trunc(member_regdate) = trunc(current_date) - 1
+</select>
+
+<!-- 금일 굿즈 판매금액을 조회한다. -->
+<select id="selectTodaySales" resultType="long">
+	select 
+	    nvl(sum(order_totalprice), 0) totalprice
+	from 
+	    "ORDER"
+	where 
+	    trunc(order_date) = trunc(current_date)
+</select>
+
+<!-- 전일 굿즈 판매금액을 조회한다. -->
+<select id="selectYesterdaySales" resultType="long">
+	select 
+	    nvl(sum(order_totalprice), 0) totalprice
+	from 
+	    "ORDER"
+	where 
+	    trunc(order_date) = trunc(current_date) - 1
+</select>
+
+<!-- 미처리 배송처리 건수를 조회한다. -->
+<select id="selectDeliveryCount" resultType="int">
+	select 
+	    count(order_delivery) 
+	from 
+	    "ORDER"
+	where order_delivery = 'N'
+</select>
+
+<!-- 미처리 교환신청 건수를 조회한다. -->
+<select id="selectChangeCount" resultType="int">
+	select 
+	    count(order_no)
+	from
+	    order_issue
+	where
+	    gui_type = '2'
+	    and gui_cngdate is null
+</select>
+
+</mapper>

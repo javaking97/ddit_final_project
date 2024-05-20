@@ -1,0 +1,42 @@
+package kr.or.ddit.vo.common;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class UserVO {
+
+	// USER 테이블
+	private int userNo;
+	private String userName;
+	private String userId;
+	private String userPw;
+	private String userType;
+	private String userProfile;
+	private String enabled;
+	
+	// MEMBER 테이블
+	private String memberTelno;
+	private String memberEmail;
+	private String memberBirth;
+	private String memberGender;
+	private String memberPostcode;
+	private String memberAddress1;
+	private String memberAddress2;
+	private LocalDate memberRegdate;
+	private String memberNotification;
+	private String memberStopyn;
+	private String memberDelyn;
+	private String memberLgnpath;
+	
+	// ARTIST 테이블
+	private LocalDate artistBirth;
+	private String artistIntro;
+	private String artistFakename;
+	private String artistDelyn;
+	private String agId;
+	
+	List<UserAuthVO> authList;
+}
